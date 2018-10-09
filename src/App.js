@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import './App.css';
-import NewTodo from './components/NewTodo';
+// import NewTodo from './components/NewTodo';
 import TodoList from './components/TodoList';
 
 
