@@ -5,7 +5,19 @@ import './App.css';
 import Todo from './Todo';
 
 class App extends Component {
-    state = {todos: []};
+    state = {
+        todos: [
+            {
+                task: '1810141202 Add styles to component',
+                isDone: true
+            },
+            {
+                task: '1810141350 Render a list of todos with map',
+                isDone: false
+            }
+
+        ]
+    }
 
     changeHandler = (event) => {
         this.setState({
@@ -25,7 +37,11 @@ class App extends Component {
                     type="text"
                     onChange={this.changeHandler}
                 />
-                <Todo/>
+                {this.state.todos.map((todo) => (
+                    <Todo
+                        text={todo.task}
+                    />
+                ))}
             </div>
         );
     }
