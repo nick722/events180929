@@ -30,6 +30,12 @@ class App extends Component {
         });
     };
 
+    deleteTodoHandler = (todoIndex) => {
+        const todos = [...this.state.todos];
+        todos.splice(todoIndex, 1);
+        this.setState({todos});
+    }
+
     render() {
         return (
             <div>
@@ -37,9 +43,10 @@ class App extends Component {
                     type="text"
                     onChange={this.changeHandler}
                 />
-                {this.state.todos.map((todo) => (
+                {this.state.todos.map((todo, index) => (
                     <Todo
                         text={todo.task}
+                        deleteTodo={() => this.deleteTodoHandler(index)}
                     />
                 ))}
             </div>

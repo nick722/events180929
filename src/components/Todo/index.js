@@ -1,9 +1,12 @@
 import React from 'react';
 import './Todo.css';
 
-const Todo = () => (
+const Todo = ({text, deleteTodo}) => (
     <div className="Todo">
-        <p>1810141202 Add styles to component</p>
+        <p>{text}</p>
+        <button
+            onClick={deleteTodo}
+        >Delete</button>
     </div>
 );
 
