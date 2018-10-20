@@ -25,7 +25,7 @@ class App extends Component {
         this.setState({
             todos: [...this.state.todos,
                 {
-                    todo: event.target.value,
+                    task: event.target.value,
                     isDone: false
                 }
             ]
