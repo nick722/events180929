@@ -1,36 +1,27 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 import Todo from '../../components/Todo';
 
 class TodoList extends Component {
-    state = {
-        todos: [
-            {
-                id: 1,
-                task: '1810141202 Add styles to component',
-                isDone: true
-            },
-            {
-                id: 2,
-                task: '1810141350 Render a list of todos with map',
-                isDone: false
-            }
+    todoId = 0
 
-        ]
+    state = {
+        todos: []
     };
 
-    changeHandler = (event) => {
+    createTodoHandler = (event) => {
+        if (event.which !== 13) return;
+
+
         this.setState({
             todos: [...this.state.todos,
                 {
+                    id: ++this.todoId,
                     task: event.target.value,
                     isDone: false
-                }
-            ]
-        });
+                }]
+        })
     };
-
 
     deleteTodoHandler = (todoIndex) => {
         const todos = [...this.state.todos];
@@ -56,7 +47,7 @@ class TodoList extends Component {
             <div>
                 <input
                     type="text"
-                    onChange={this.changeHandler}
+                    onKeyPress={this.createTodoHandler}
                 />
                 {this.state.todos.map((todo, index) => (
                     <Todo
