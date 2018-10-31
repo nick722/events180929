@@ -1,33 +1,25 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 import AddTodo from '../AddTodo';
+import Todo from '../../components/Todo';
 
-class TodoList extends Component {
+const TodoList = ({ todos }) => (
+    <ul>
+        {todos.map(todo => (
+            <Todo
+                key={todo.id}
+                text={todo.task}
+                {...todo}
+            />
+        ))}
+    </ul>
+)
 
-    deleteTodoHandler = (todoIndex) => {
-        const todos = [...this.state.todos];
-        todos.splice(todoIndex, 1);
-        this.setState({todos});
-    };
+const mapStateToProps = state => ({
+    todos: state.todos
+})
 
-    changeTodoHandler = (event, id) => {
-        const todoIndex = this.state.todos.findIndex(t => t.id === id);
-
-        const todo = {...this.state.todos[todoIndex]};
-
-        todo.task = event.target.value;
-
-        const todos = [...this.state.todos];
-        todos[todoIndex] = todo;
-
-        this.setState({todos});
-    };
-
-    render() {
-        return (
-            <AddTodo/>
-        );
-    }
-}
-
-export default TodoList;
+export default connect (
+    mapStateToProps
+)(TodoList);
