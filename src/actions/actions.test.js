@@ -1,5 +1,5 @@
 import * as actions from "./index";
-import * as constants from "../constants";
+import * as constants from "../constants/ActionTypes";
 
 describe("actions", () => {
   it("should create an action to add a todo", () => {

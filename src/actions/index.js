@@ -1,4 +1,4 @@
-import * as constants from "../constants";
+import * as constants from "../constants/ActionTypes";
 
 export function addTodo(text) {
   return {
