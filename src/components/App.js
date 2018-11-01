@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Layout from "./Layout";
 import TodoList from "../containers/TodoList";
 import AddTodo from "../containers/AddTodo";
+import Reddit from "../containers/fetchDataFromAServer";
 
 class App extends Component {
   render() {
@@ -13,6 +14,8 @@ class App extends Component {
           <AddTodo />
           <TodoList />
         </Layout>
+        <hr />
+        <Reddit />
       </div>
     );
   }
