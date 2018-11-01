@@ -1,16 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import './Layout.css';
-import Aux from '../../hoc/Auxiliary';
-import Toolbar from '../Navigation/Toolbar';
+import "./Layout.css";
+import Aux from "../../hoc/Auxiliary";
+import Header from "../Navigation/Header";
 
-const Layout = ({children}) => (
-    <Aux>
-        <Toolbar/>
-        <main className="Content">
-            {children}
-        </main>
-    </Aux>
+const Layout = ({ children }) => (
+  <Aux>
+    <Header />
+    <main className="Content">{children}</main>
+  </Aux>
 );
 
 export default Layout;
