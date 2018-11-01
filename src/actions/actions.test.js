@@ -5,7 +5,6 @@ describe("actions", () => {
     const text = "Add a test for actions";
     const exprectedAction = {
       type: "ADD_TODO",
-      id: 1,
       text
     };
 
