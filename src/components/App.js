@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Layout from "./Layout";
 import TodoList from "../containers/TodoList";
 import AddTodo from "../containers/AddTodo";
-import FetchTodosFromGoogleTasks from "../containers/FetchTodosFromGoogleTasks";
+import FetchTodosFromTheServer from "../containers/FetchTodosFromTheServer";
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
           <TodoList />
         </Layout>
         <hr />
-        <FetchTodosFromGoogleTasks />
+        <FetchTodosFromTheServer />
       </div>
     );
   }
